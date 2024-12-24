@@ -4,13 +4,14 @@ import Footer from "../components/Footer";
 import { Box } from "@mui/material";
 
 import { useLogin } from "../contexts/LoginContext";
-import { Navigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 const Dashboard = () => {
+    const navigate = useNavigate();
     const { user, isLoggedIn, logout } = useLogin();
 
     if (!isLoggedIn) {
-        Navigate("/login");
+        navigate("/login");
         return <p>Please log in to view the dashboard.</p>;
     }
     return (

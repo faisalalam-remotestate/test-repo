@@ -66,7 +66,7 @@ const MultipartSignUpForm = () => {
         console.log("Final Register Data :- ", registerData);
         register(registerData).then((response) => {
             console.log('Registration Success:', response);
-            navigate('/');
+            navigate('/login');
         });
     };
 

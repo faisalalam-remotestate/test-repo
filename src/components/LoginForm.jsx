@@ -48,7 +48,7 @@ const LoginForm = () => {
                         .then((res) => {
                             console.log( "Response Login ==> " , res);
                             login(res);
-                            navigate("/");
+                            navigate("/Dashboard");
                         })
                     }}
                 >
