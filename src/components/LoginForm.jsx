@@ -8,6 +8,7 @@ import { useMutation } from "@tanstack/react-query";
 import { useNavigate } from "react-router-dom";
 // import { register } from "../api/api";
 import { useLogin } from '../contexts/LoginContext';
+import { RouterLink } from "../utils/Utils";
 
 
 const validationLoginSchema = Yup.object({
@@ -77,6 +78,7 @@ const LoginForm = () => {
                         </Box>
                     </Form>
                 </Formik>
+                <RouterLink to="/signUP">Already have an account = Signup</RouterLink>
             </Box>
         </Box>
     );
