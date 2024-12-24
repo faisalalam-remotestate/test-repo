@@ -18,6 +18,7 @@ import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 import Login from './pages/Login';
 
 import { LoginProvider } from './contexts/LoginContext';
+import Dashboard from './pages/Dashboard';
 
 const queryClient = new QueryClient();
 
@@ -31,7 +32,8 @@ root.render(
                     <Routes>
                         <Route path="/" element={<Home />} />
                         <Route path="/signUP" element={<SignUp />} />
-                        <Route path="/Login" element={<Login />} />
+                        <Route path="/login" element={<Login />} />
+                        <Route path="/Dashboard" element={<Dashboard />} />
                     </Routes>
                 </Router>
             </ThemeProvider>

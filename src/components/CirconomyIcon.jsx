@@ -12,7 +12,7 @@ const CirconomyIconMain = ({ width = '200px' , ...props }) => {
             alignItems="center"
             width={width}
             sx={{
-                zIndex:-2
+                zIndex:props.zIndex
             }}
         >
             <CirconomyLogo />
@@ -28,7 +28,7 @@ const CirconomyIconWhite = ({ width = '200px' , ...props }) => {
             width={width}
             sx={props}
         >
-            <CirconomyLogoWhite fill='red'/>
+            <CirconomyLogoWhite />
         </Box>
     );
 };

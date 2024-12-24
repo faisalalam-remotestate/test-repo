@@ -150,7 +150,7 @@ const Footer = () => {
             width: "fit-content",
           }}
         >
-          <CirconomyIconMain width={{ xs: "280px" }}
+          <CirconomyIconMain zIndex={-2} width={{ xs: "280px" }}
           // sx={{
           //   zIndex:1
           // }}

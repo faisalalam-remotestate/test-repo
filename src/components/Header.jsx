@@ -3,7 +3,7 @@ import { AppBar, Toolbar, IconButton, useMediaQuery, Box, Container, Button } fr
 import MenuIcon from '@mui/icons-material/Menu';
 import { RouterLink } from '../utils/Utils';
 
-import { CirconomyIconWhite } from './CirconomyIcon';
+import { CirconomyIconMain, CirconomyIconWhite } from './CirconomyIcon';
 import { useLogin } from '../contexts/LoginContext';
 
 const Header = () => {
@@ -49,7 +49,7 @@ const Header = () => {
                             alignItems: "center",
                         }}
                     >
-                        <CirconomyIconWhite width='150px' />
+                        {isLoggedIn ? <CirconomyIconMain zIndex={1} width='150px' /> : <CirconomyIconWhite width='150px' />}
                     </Box>
                     <Box
                         sx={{
@@ -67,6 +67,7 @@ const Header = () => {
                                 sx={{
                                     display: 'flex',
                                     flexDirection: 'row',
+                                    color: "black"
                                 }}
                             >
                                 <RouterLink to="/123">Biochar</RouterLink>
@@ -77,7 +78,7 @@ const Header = () => {
                                 <RouterLink sx={{ color: "white", backgroundColor: "#C44736", height: "fit-content", padding: "4px 10px 0px 10px", margin: "6px 0 0 0", borderRadius: "6px", fontSize: "1rem" }} >Remove CO<sub>2</sub></RouterLink>
                                 {isLoggedIn ?
                                     <Button
-                                    onClick={logout}
+                                        onClick={logout}
                                         sx={{
                                             width: {
                                                 // xs: "1%",
@@ -96,7 +97,7 @@ const Header = () => {
                                         Logout
                                     </Button>
                                     :
-                                    <RouterLink to="/Login" >Login</RouterLink>
+                                    <RouterLink to="/login" >Login</RouterLink>
                                 }
                             </Box>
                         )}
@@ -125,7 +126,28 @@ const Header = () => {
                     <RouterLink sx={{ padding: "10px", width: "100%" }}>Projects</RouterLink>
                     <RouterLink sx={{ padding: "10px", width: "100%" }}>About us</RouterLink>
                     <RouterLink sx={{ padding: "10px", width: "100%" }}>Contact us</RouterLink>
-                    <RouterLink to="/signUP" sx={{ padding: "10px", width: "100%" }}>Login</RouterLink>
+                    {isLoggedIn ?
+                        <Button
+                            onClick={logout}
+                            sx={{
+                                width: {
+                                    // xs: "1%",
+                                    sm: "fit-content"
+                                },
+                                px: 2,
+                                py: 2,
+                                fontFamily: "Overpass",
+                                fontSize: "8px",
+                                // margin: "50px",
+                                borderRadius: "2px"
+                            }}
+                            variant="contained"
+                            color="primary"
+                        >
+                            Logout
+                        </Button>
+                        :
+                        <RouterLink to="/login" sx={{ padding: "10px", width: "100%" }}>Login</RouterLink>}
                 </Box>
             )}
         </AppBar>
